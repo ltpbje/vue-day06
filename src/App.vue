@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="footer_wrap">
-      <a href="#/find">发现音乐</a>
-      <a href="#/my">我的音乐</a>
-      <a href="#/friend">朋友</a>
+      <router-link to="/find">发现音乐</router-link>
+      <router-link to="/my">我的音乐</router-link>
+      <router-link to="/friend">朋友</router-link>
     </div>
     <div class="top">
       <!-- 路由出口 → 匹配的组件所展示的位置 -->
@@ -31,6 +31,7 @@ body {
   background-color: #333;
   color: #ccc;
 }
+
 .footer_wrap a {
   flex: 1;
   text-decoration: none;
@@ -42,5 +43,8 @@ body {
 }
 .footer_wrap a:hover {
   background-color: #555;
+}
+.footer_wrap a.router-link-active{
+  background-color:purple;
 }
 </style>

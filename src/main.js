@@ -13,22 +13,8 @@ import App from './App.vue'
 // 1. 建组件(views目录)，配规则
 // 2. 准备导航链接，配置路由出口(匹配的组件展示的位置) 
 // VueRouter插件初始化
-import VueRouter from 'vue-router'
-import Find from './views/Find.vue'
-import Friend from './views/Friend.vue'
-import My from './views/My.vue'
-Vue.use(VueRouter)
-const router = new VueRouter(
-  {
-    routes: [
-      { path: '/find', component: Find },
-      { path: '/friend', component: Friend },
-      { path: '/my', component: My }
-    ]
-  }
-)
+import router from '@/router/index.js'
 Vue.config.productionTip = false
-
 new Vue({
   render: h => h(App),
   router
