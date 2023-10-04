@@ -44,7 +44,10 @@ body {
 .footer_wrap a:hover {
   background-color: #555;
 }
-.footer_wrap a.router-link-active{
+/* .footer_wrap a.router-link-active{
+  background-color:purple;
+} */
+.footer_wrap a.active{
   background-color:purple;
 }
 </style>
