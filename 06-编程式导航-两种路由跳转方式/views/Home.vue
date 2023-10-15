@@ -26,25 +26,28 @@ export default {
   methods:{
     toSearch(){
       // 通过路径跳转(简易方便)
-      //      this.$router.push('/search')
-      //      this.$router.push({
-      //        path:'/search'
-      //      })
+        // this.$router.push('/search');
       // 通过查询参数传参
-      //      this.$router.push(`/search?word=${this.inpValue}`)
-     
-      //      this.$router.push({
-      //       path:'/search',
-      //       query:{
-      //         word:this.inpValue
-      //       }
-      //      })
+      //    this.$router.push(`/search?word=${this.inpValue}`)
+      //    this.$router.push({
+      //     path:'/search',
+      //     query:{
+      //       word:this.inpValue
+      //     }
+      //   });
       // 通过路由名字跳转（适合路径名字长的场景）
       //       this.$router.push({
       //         name:'search'
       //       })
       // 通过动态路由传参
-        this.$router.push(`/search/${this.inpValue}`)
+        // this.$router.push(`/search/${this.inpValue}`)
+        this.$router.push({
+          name:'search',
+          params:{
+            word:this.inpValue
+          }
+        });
+
     }
   }
 }
