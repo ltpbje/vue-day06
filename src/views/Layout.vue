@@ -1,13 +1,18 @@
 <template>
   <div class="h5-wrapper">
     <div class="content">
-      内容
+      <!-- 二级路由出口 -->
+      <router-view></router-view>
     </div>
     <nav class="tabbar">
-      <a href="#/article">面经</a>
-      <a href="#/collect">收藏</a>
-      <a href="#/like">喜欢</a>
-      <a href="#/user">我的</a>
+      <!--导航高亮
+        1,将a标签，替换成router-link(to)
+        2.结合高亮类名实现高亮效果
+      -->
+      <router-link to="/article">面经</router-link>
+      <router-link to="/collect">收藏</router-link>
+      <router-link to="/like">喜欢</router-link>
+      <router-link to="/user">我的</router-link>
     </nav>
   </div>
 </template>
@@ -46,6 +51,9 @@ body {
       font-size: 14px;
       color: #333;
       -webkit-tap-highlight-color: transparent;
+    }
+    .router-link-active{
+      background-color:pink;
     }
   }
 }
