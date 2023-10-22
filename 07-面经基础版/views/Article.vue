@@ -1,6 +1,6 @@
 <template>
   <div class="article-page">
-    <div class="article-item" v-for="item in articles" :key="item.id"  >
+    <div class="article-item" v-for="item in articles" :key="item.id"  @click="$router.push(`/detail/${item.id}`)" >
       <div class="head">
         <img :src="item.creatorAvatar" alt="" />
         <div class="con">
@@ -31,7 +31,7 @@ export default {
     const res = await axios({
       url:' https://mock.boxuegu.com/mock/3083/articles',
   });
-  console.log(res);
+  // console.log(res);
   this.articles = res.data.result.rows;
 
   }

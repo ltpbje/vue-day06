@@ -1,6 +1,8 @@
 <template>
   <div class="h5-wrapper">
-    <router-view></router-view>
+    <keep-alive :include="['LayoutPage']">
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 

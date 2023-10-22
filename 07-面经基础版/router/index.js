@@ -12,6 +12,7 @@ const router = new VueRouter({
     // 一级路由
     {
       path: '/',
+      redirect: '/article',
       component: Layout,
       // 二级路由
       children: [
@@ -34,7 +35,7 @@ const router = new VueRouter({
       ]
     },
     {
-      path: '/detail',
+      path: '/detail/:id?',
       component: ArticleDetail
     }
   ]

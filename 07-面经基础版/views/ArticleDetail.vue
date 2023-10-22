@@ -1,34 +1,38 @@
 <template>
-  <div class="article-detail-page">
-    <nav class="nav"><span class="back">&lt;</span> 面经详情</nav>
+  <div class="article-detail-page" v-if="article.id">
+    <nav class="nav"><span class="back" @click="$router.back()">&lt;</span> 面经详情</nav>
     <header class="header">
-      <h1>百度前端面经</h1>
-      <p>2022-01-20 | 315 浏览量 | 44 点赞数</p>
+      <h1>{{ article.stem }}</h1>
+      <p>{{article.createdAt}} | {{article.views}} 浏览量 | {{article.likeCount}}点赞数</p>
       <p>
         <img
-          src="http://teachoss.itheima.net/heimaQuestionMiniapp/%E5%AE%98%E6%96%B9%E9%BB%98%E8%AE%A4%E5%A4%B4%E5%83%8F%402x.png"
-          alt=""
+          :src=article.creatorAvatar        alt=""
         />
-        <span>青春少年</span>
+        <span>{{article.creatorName}}</span>
       </p>
     </header>
     <main class="body">
-      虽然百度这几年发展势头落后于AT, 甚至快被京东赶上了,毕竟瘦死的骆驼比马大,
-      面试还是相当有难度和水准的, 一面.....
+     {{article.content}}
     </main>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
 // 请求地址: https://mock.boxuegu.com/mock/3083/articles/:id
 // 请求方式: get
 export default {
   name: "ArticleDetailPage",
   data() {
     return {
-      
+      article:{}
     }
-  }
+  },
+  async created(){
+   const res =await axios.get(`https://mock.boxuegu.com/mock/3083/articles/${this.$route.params.id}`);
+  // console.log(res.data.result);
+  this.article =res.data.result
+  },
 }
 </script>
 
